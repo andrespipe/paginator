@@ -1,0 +1,13 @@
+<div class="pagination">
+  <ng-container *ngIf="pagesLength > 0">
+    <a href="#" (click)="prevPage()" [ngClass]="{'disabled': currentPage === 0}" >&laquo;</a>
+    <a href="#" (click)="prev()" [ngClass]="{'disabled': currentIndex === 0}">&lt;</a>
+    <ng-container *ngFor="let page of pages;let i = index">
+      <ng-container *ngIf="i >= currentPage && i < (currentPage + pageSize)">
+        <a (click)="setIndex(i)" [ngClass]="{'active': i === currentIndex}" href="#">{{ i + 1}}</a>
+      </ng-container>
+    </ng-container>
+    <a href="#" (click)="next()" [ngClass]="{'disabled': currentIndex === pages.length - 1}">&gt;</a>
+    <a href="#" (click)="nextPage()" [ngClass]="{'disabled': currentPage === pages.length  - pageSize}">&raquo;</a>
+  </ng-container>
+</div>

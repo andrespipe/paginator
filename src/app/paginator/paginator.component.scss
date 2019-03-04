@@ -1,0 +1,47 @@
+$font: Arial, Helvetica, sans-serif;
+$bkgColor: transparent;
+$bkgHover: grey;
+$bkgActive: grey;
+$fontColor: black;
+$fontHover: white;
+$fontActive: white;
+$fontDisable: grey;
+$itemWidth: 50px;
+
+.pagination {
+
+  font-family: $font;
+
+  display: inline-block;
+
+  a {
+    color: $fontColor;
+    float: left;
+    padding: 8px 0;
+    width: $itemWidth;
+    text-align: center;
+    text-decoration: none;
+
+    &:hover{
+      background-color: $bkgHover;
+      color: $fontHover;
+    }
+  }
+
+  a.disabled{
+    color: $fontDisable;
+    cursor: default;
+    &:hover{
+      background-color: $bkgColor;
+    }
+  }
+
+  a.active {
+    color: $fontActive;
+    background-color: $bkgActive;
+    cursor: default;
+    &:hover{
+      background-color: $bkgActive;
+    }
+  }
+}
